@@ -1,0 +1,166 @@
+html,body {
+    background-image: url(images/star-sky.jpg);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100vw;
+    height: 25vh;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 23vw;
+    padding: 1%;
+}
+
+#logo-container img {
+    width: 50%;
+    height: auto;
+}
+
+#header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 73vw;
+    padding: 1%;
+}
+
+h1 {
+    background: #F04D07;
+    background: -webkit-linear-gradient(to top, #F04D07 0%, #BD0000 100%);
+    background: -moz-linear-gradient(to top, #F04D07 0%, #BD0000 100%);
+    background: linear-gradient(to top, #F04D07 0%, #BD0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: serif;
+    font-style: italic;
+    height: 30%;
+    margin: auto;
+}
+
+#header-aside {
+    color: rgb(233, 182, 73);
+    font-family: serif;
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    height: 75vh;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    width: 98vw;
+    height: auto;
+    margin: 1%;
+}
+
+#crew-container {
+    display: flex;
+    flex-direction: column;
+    width: 73%;
+    height: auto;
+    margin: 1%;
+}
+
+#crew-clipboard {
+    background-image: url(images/cartoon-clipboard.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    width: 23vw;
+    height: auto;
+    margin: 1%;
+}
+
+#available-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 10%;
+    margin-top: 30%;
+    padding-left: 12%;
+}
+
+.selected {
+    color: gray;
+    text-decoration: line-through;
+    pointer-events: none;
+}
+
+#form-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+#crew-cards {
+    background-color: rgb(92, 212, 156);
+    border: rgb(0, 0, 0) solid 4px;
+    border-radius: 20px;
+    display: inline-flex;
+    width: auto;
+    height: 86%;
+}
+
+.character-card {
+    color: black;
+    background-color: white;
+    text-align: center;
+    border: rgb(0, 0, 0) solid 3px;
+    border-radius: 20px;
+    display: inline-grid;
+    width: 17.5%;
+    height: auto;
+    margin: 1%;
+}
+
+.character-image {
+    justify-self: center;
+    height: 12rem;
+    width: auto;
+}
+
+.button-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+button {
+    position: relative;
+    justify-self: center;
+    color: whitesmoke;
+    font-family: serif;
+    font-size: 18px;
+    background-color: #e06369;
+    border: rgb(134, 8, 8) solid 3px;
+    border-radius: 5px;
+    height: 2rem;
+    width: max-content;
+    margin: auto;
+}
+
+.like-btn {
+    background-color: #57c569;
+    border: rgb(7, 102, 28) solid 3px;
+}
