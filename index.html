@@ -6,6 +6,9 @@
     <script src="script.js"></script>
   </head>
   <body>
+    <div id='launch-window'>
+      <div id='launch-message'></div>
+    </div>
     <header>
       <div id='logo-container'>
         <img src='images/planet-express-logo.png'>
@@ -13,24 +16,31 @@
       <div id='header-container'>
         <h1>FUTURAMA CREW-BOBULATOR</h1>
         <aside id='header-aside'>(Not to be confused with Wernstrom's Teamulator!)</aside>
-        <p>Good news, everyone! Professor Farnsworth needs your help assembling a crew for his next delivery aboard the Planet Express ship! Choose from the available crew list or add your own character using the form below.</p>
+        <p>Good news, everyone! Professor Farnsworth needs your help assembling a crew for his next delivery aboard the Planet Express ship! Choose from the available crew list or add your own crew member to the Planet Express crew using the Crew-Bobulator form below. When you've assembled your crew, click the LAUNCH button!</p>
       </div>
     </header>
     <main>
-      <div id='crew-clipboard'>
-        <div id='available-list'></div>
-      </div>
-      <div id='crew-container'>
+      <section id='crew-clipboard'>
+        <ul id='available-list'></ul>
+      </section>
+      <section id='crew-container'>
         <div id='form-container'>
           <form id='crew-form'>
-            <input type="text" class="input-text" name="name" value="" placeholder='Character Name'>
-            <input type="text" class="input-text" name="image" value="" placeholder='Image URL'>
-            <input type="text" class="input-text" name="species" value="" placeholder='Species'>
+            <input type="text" class="input-text" name="name" placeholder='Character Name'>
+            <input type="text" class="input-text" name="image" placeholder='Image URL'>
+            <input type="text" class="input-text" name="species" placeholder='Species'>
             <button type=submit id='submit-button' name="submit">ADD CREWMEMBER</button>
           </form>
+            <button class='launch-btn'>LAUNCH</button>
         </div>
-        <div id='crew-cards'></div>
-      </div>
+        <div id='crew-cards'>
+          <div class='empty-character-card'></div>
+          <div class='empty-character-card'></div>
+          <div class='empty-character-card'></div>
+          <div class='empty-character-card'></div>
+          <div class='empty-character-card'></div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
