@@ -1,9 +1,10 @@
 html,body {
     background-image: url(images/star-sky.jpg);
-    width: 100vw;
-    height: 100vh;
+    background-size: contain;
     margin: 0;
 }
+
+/* header styling */
 
 header {
     color: white;
@@ -12,28 +13,19 @@ header {
     text-align: center;
     width: 100vw;
     height: 25vh;
-    margin-top: 0;
-    margin-left: 0;
 }
 
-#logo-container {
+#planet-express-logo {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 23vw;
+    width: auto;
     padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#logo-container img {
-    width: 50%;
-    height: auto;
-}
-
-#header-container {
+#heading-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 73vw;
     padding: 1%;
 }
@@ -44,6 +36,7 @@ h1 {
     background: -moz-linear-gradient(to top, #F04D07 0%, #BD0000 100%);
     background: linear-gradient(to top, #F04D07 0%, #BD0000 100%);
     -webkit-background-clip: text;
+    background-clip: calc();
     -webkit-text-stroke: 1px rgb(228, 200, 110);
     -webkit-text-fill-color: transparent;
     font-family: serif;
@@ -52,9 +45,10 @@ h1 {
 }
 
 #header-aside {
-    color: rgb(233, 182, 73);
-    font-family: serif;
+    color: goldenrod;
 }
+
+/* main styling */
 
 main {
     display: flex;
@@ -62,19 +56,10 @@ main {
     height: 75vh;
 }
 
-#main-container {
-    display: flex;
-    flex-direction: row;
-    width: 98vw;
-    height: auto;
-    margin: 1%;
-}
-
 #crew-container {
     display: flex;
     flex-direction: column;
     width: 73%;
-    height: auto;
     margin: 1%;
 }
 
@@ -84,86 +69,80 @@ main {
     background-size: 100% 100%;
     display: flex;
     width: 23vw;
-    height: auto;
     margin: 1%;
 }
 
 #available-list {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: auto;
-    margin: 10%;
-    margin-top: 30%;
-    padding-left: 12%;
+    width: 50%;
+    margin-top: 35%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.selected {
+.li-selected {
     color: gray;
     text-decoration: line-through;
     pointer-events: none;
 }
 
+/* form styling */
+
 #form-container {
     display: flex;
     justify-content: center;
-    align-content: center;
-    width: 80%;
     margin: auto;
+    width: 100%;
 }
 
-.launch-btn {
+#crew-form {
     display: flex;
     justify-content: center;
-    align-content: center;
-    background-color: #57c569;
-    border: rgb(7, 102, 28) solid 3px;
-    width: 12%;
-    margin-left: 2%;
-    margin-right: 1%;
+    width: 80%;
 }
 
-.launch-btn:hover {
-    box-shadow: 0 0 15px 8px rgb(233, 196, 75);
+.input-text {
+    width: 20%;
+    margin: 4px;
 }
 
-#launch-window {
-    background: #ffffff94;
-    backdrop-filter: blur(3px);
-    z-index: 1;
-    position: absolute;
-    display: none;
-    height: 100vh;
-    width: 100vw;
+#submit-button {
+    width: fit-content;
+    margin: 4px;
 }
 
-#launch-message {
-    background: white;
+/* launch button styling */
+
+#launch-btn {
     display: flex;
-    border: rgb(0, 0, 0) solid 4px;
-    border-radius: 20px;
-    box-shadow: 0 0 50px 20px rgb(95, 95, 95);
-    height: 60%;
-    width: 50%;
-    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: limegreen;
+    border: forestgreen solid 3px;
+    width: 10%;
+    margin: 2px;
 }
 
-#crew-cards {
-    background-color: rgb(92, 212, 156);
-    border: rgb(0, 0, 0) solid 4px;
+#launch-btn:hover {
+    box-shadow: 0 0 15px 8px yellowgreen;
+}
+
+/* character card styling */
+
+#character-cards {
+    background-color: mediumseagreen;
+    border: black solid 4px;
     border-radius: 20px;
     display: inline-flex;
-    width: auto;
-    height: 86%;
+    height: 87%;
 }
 
 .empty-character-card {
-    background-color: rgb(142, 247, 212);
-    border: rgb(0, 0, 0) solid 3px;
+    background-color: aquamarine;
+    border: black solid 3px;
     border-radius: 20px;
-    display: inline-grid;
     width: 17.5%;
-    height: auto;
     margin: 1%;
 }
 
@@ -171,11 +150,10 @@ main {
     color: black;
     background-color: white;
     text-align: center;
-    border: rgb(0, 0, 0) solid 3px;
+    border: black solid 3px;
     border-radius: 20px;
     display: inline-grid;
     width: 17.5%;
-    height: auto;
     margin: 1%;
 }
 
@@ -186,31 +164,12 @@ h3 {
 .character-image {
     justify-self: center;
     height: 10rem;
-    width: auto;
-}
-
-button {
-    position: relative;
-    justify-self: center;
-    color: whitesmoke;
-    font-family: serif;
-    font-size: 18px;
-    background-color: #e66b72;
-    border: rgb(151, 12, 12) solid 3px;
-    border-radius: 5px;
-    height: 2rem;
-    width: max-content;
-    margin: auto;
-}
-
-button:hover {
-    box-shadow: 0 0 15px 2px rgb(122, 222, 255);
 }
 
 .header-div {
     display: flex;
     justify-content: right;
-    background-color: rgb(252, 227, 192);
+    background-color: bisque;
     border-bottom: burlywood solid 2px;
     border-radius: 20px 20px 0 0;
     width: 98%;
@@ -229,14 +188,84 @@ button:hover {
 .footer-div {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-content: center;
-    background-color: rgb(252, 227, 192);
+    background-color: bisque;
     border-top: burlywood solid 2px;
     border-radius: 0 0 20px 20px;
 }
 
 .like-btn {
-    background-color: #57c569;
-    border: rgb(7, 102, 28) solid 3px;
+    background-color: limegreen;
+    border: forestgreen solid 3px;
+}
+
+/* default button styling */
+
+button {
+    position: relative;
+    justify-self: center;
+    color: white;
+    font-family: serif;
+    font-size: 14px;
+    background-color: salmon;
+    border: darkred solid 3px;
+    border-radius: 5px;
+    height: 2rem;
+    width: max-content;
+    margin: auto;
+}
+
+button:hover {
+    box-shadow: 0 0 15px 2px cyan;
+}
+
+/* pop-up window styling */
+
+#pop-up-window-container {
+    background: #22222294;
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+
+#pop-up-window {
+    background: white;
+    display: flex;
+    flex-direction: row;
+    border: black solid 4px;
+    border-radius: 20px;
+    height: 60%;
+    width: 50%;
+    margin: auto;
+}
+
+#farnsworth-image {
+    height: 90%;
+    margin: auto;
+}
+
+#message-container {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+#farnsworth-message {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: turquoise;
+    border: black solid 2px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px 5px cyan;
+    height: 52%;
+    width: 72%;
+    margin: 4%;
+    margin-bottom: 0;
+    padding: 10%;
+}
+#confirm-btn {
+    height: fit-content;
 }

@@ -1,11 +1,3 @@
 {
-  "characters": [
-    {
-      "id": 1,
-      "Name": "Zapp Brannigan",
-      "PicUrl": "https://vignette.wikia.nocookie.net/en.futurama/images/e/e9/Zapp_Brannigan.png/revision/latest/scale-to-width-down/327?cb=20101013084300",
-      "Species": "Human",
-      "likes": 0
-    }
-  ]
+  "characters": []
 }
