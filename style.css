@@ -31,12 +31,8 @@ header {
 }
 
 h1 {
-    background: #F04D07;
-    background: -webkit-linear-gradient(to top, #F04D07 0%, #BD0000 100%);
-    background: -moz-linear-gradient(to top, #F04D07 0%, #BD0000 100%);
     background: linear-gradient(to top, #F04D07 0%, #BD0000 100%);
     -webkit-background-clip: text;
-    background-clip: calc();
     -webkit-text-stroke: 1px rgb(228, 200, 110);
     -webkit-text-fill-color: transparent;
     font-family: serif;
