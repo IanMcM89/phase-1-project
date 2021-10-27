@@ -88,7 +88,7 @@ const fetchCustomCrew = () => {
 
 const createPopUpWindow = (message, imageURL = 'images/farnsworth-sad.png') => {
     const popUpWindow = document.querySelector('#pop-up-window-container');
-    
+
     popUpWindow.style.display = 'flex';
     popUpWindow.innerHTML = `
         <div id='pop-up-window'>
@@ -203,12 +203,12 @@ const handleStarRating = characterCard => {
     let starsArray = [...characterCard.querySelectorAll('img.star')];
 
     starsArray.forEach(star => star.onclick = () => {
-        i = starsArray.indexOf(star);
+        let index = starsArray.indexOf(star);
 
         if (star.className === 'star') {
-            starsArray.filter(star => starsArray.indexOf(star) <= i).forEach(star => star.className = 'star-active');
+            starsArray.filter(star => starsArray.indexOf(star) <= index).forEach(star => star.className = 'star-active');
         } else {
-            starsArray.filter(star => starsArray.indexOf(star) > i).forEach(star => star.className = 'star');
+            starsArray.filter(star => starsArray.indexOf(star) > index).forEach(star => star.className = 'star');
         }
     })
 }
