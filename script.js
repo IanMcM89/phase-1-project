@@ -146,7 +146,7 @@ const postCrewMember = crewMember => {
     .then(resp => resp.json())
     .then(json => {
         console.log(json);
-        createListItem(crewMember);
+        createListItem(json);
     })
     .catch(err => console.error(err))
 }
