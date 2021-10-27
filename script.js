@@ -192,8 +192,8 @@ const createCharacterCard = (crewMember, li) => {
         </div>
     `;
 
-    characterCard.querySelector('button.remove-btn').onclick = (e) => removeCharacterCard(crewMember);
-    characterCard.querySelector('button.fire-btn').onclick = (e) => handleFireButton(crewMember);
+    characterCard.querySelector('button.remove-btn').onclick = () => removeCharacterCard(crewMember);
+    characterCard.querySelector('button.fire-btn').onclick = () => handleFireButton(crewMember);
 
     handleStarRating(characterCard);
     selectCrewMember(crewMember);
