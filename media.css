@@ -1,0 +1,51 @@
+/* Common breakpoints:
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV */
+
+@media screen and (max-width: 1024px) {
+
+    /* header styling */
+    header {
+        height: 35vh;
+    }
+
+    /* main styling */
+    main {
+        height: 65vh;
+    }
+
+    /* Available crew list styling */
+    #clipboard-title {
+        font-size: 12px;
+    }
+
+    #available-crew-list {
+        font-size: 12px;
+    }
+
+    /* character card styling */
+    .character-image {
+        height: 7rem;
+    }
+
+    /* default button styling */
+    button {
+        font-size: 12px;
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width: 1024px) and (max-width: 768px) and (orientation: landscape) {
+    /* header styling */
+    header {
+        height: 40vh;
+    }
+
+    /* main styling */
+    main {
+        height: 60vh;
+    }
+}
