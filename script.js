@@ -116,6 +116,16 @@ const checkFormInputs = e => {
     let warningMessage = '"You need to fill out ALL the Crew-Bobulator\'s input fields...';
 
     if (Object.values(inputs).includes('')) return createPopUpWindow(warningMessage);
+    isDuplicate(e, inputs);
+}
+
+//Checks if crewmember already exists before submission:
+const isDuplicate = (e, inputs) => {
+    inputs.name = inputs.name.charAt(0).toUpperCase() + inputs.name.slice(1);
+
+    let warningMessage = `My eyesight is a bit hazy these days, but I believe ${inputs.name} is already standing by...`;
+
+    if ([...document.querySelectorAll('li')].find(li => li.textContent === inputs.name)) return createPopUpWindow(warningMessage);
     handleSubmit(e, inputs);
 }
 
