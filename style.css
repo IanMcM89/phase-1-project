@@ -8,6 +8,58 @@ html,body {
     display: none;
 }
 
+/* pop-up window styling */
+
+#pop-up-window-container {
+    background: #22222294;
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+
+#pop-up-window {
+    background: white;
+    display: flex;
+    flex-direction: row;
+    border: black solid 4px;
+    border-radius: 20px;
+    height: 60%;
+    width: 50%;
+    margin: auto;
+}
+
+#farnsworth-image {
+    height: 90%;
+    margin: auto;
+}
+
+#message-container {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+#farnsworth-message {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: turquoise;
+    border: black solid 2px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px 5px cyan;
+    height: 52%;
+    width: 72%;
+    margin: 4%;
+    margin-bottom: 0;
+    padding: 10%;
+}
+
+#confirm-btn {
+    height: fit-content;
+}
+
 /* header styling */
 
 header {
@@ -46,6 +98,11 @@ h1 {
 
 #header-aside {
     color: goldenrod;
+}
+
+#header-intro {
+    font-size: 16px;
+    padding: 2%;
 }
 
 /* main styling */
@@ -241,55 +298,4 @@ button {
 
 button:hover {
     box-shadow: 0 0 15px 2px cyan;
-}
-
-/* pop-up window styling */
-
-#pop-up-window-container {
-    background: #22222294;
-    backdrop-filter: blur(3px);
-    z-index: 1;
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-}
-
-#pop-up-window {
-    background: white;
-    display: flex;
-    flex-direction: row;
-    border: black solid 4px;
-    border-radius: 20px;
-    height: 60%;
-    width: 50%;
-    margin: auto;
-}
-
-#farnsworth-image {
-    height: 90%;
-    margin: auto;
-}
-
-#message-container {
-    display: flex;
-    flex-direction: column;
-    width: 65%;
-}
-
-#farnsworth-message {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    background: turquoise;
-    border: black solid 2px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px 5px cyan;
-    height: 52%;
-    width: 72%;
-    margin: 4%;
-    margin-bottom: 0;
-    padding: 10%;
-}
-#confirm-btn {
-    height: fit-content;
 }

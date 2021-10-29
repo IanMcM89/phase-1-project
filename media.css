@@ -1,10 +1,3 @@
-/* Common breakpoints:
-320px — 480px: Mobile devices
-481px — 768px: iPads, Tablets
-769px — 1024px: Small screens, laptops
-1025px — 1200px: Desktops, large screens
-1201px and more —  Extra large screens, TV */
-
 /* Desktops and laptops ----------- */
 @media only screen  and (max-width : 1224px) {
     /* Styles */
@@ -12,6 +5,8 @@
 
 /* iPad Pro (landscape) ----------- */
 @media only screen and (max-device-width : 1366px) and (min-device-width : 1024px) and (orientation : landscape) {
+    /* body styling */
+
     html,body {
         background-color: salmon;
         background-size: 100%;
@@ -19,21 +14,82 @@
         margin-bottom: 15vh;
     }
 
+    /* pop-up window styling */
+
+    #pop-up-window {
+        height: 50%;
+        width: 60%;
+        margin: auto;
+    }
+
+    #farnsworth-message {
+        font-size: 18px;
+    }
+
     /* header styling */
+
     header {
         height: 35vh;
     }
 
+    #planet-express-logo {
+        display: flex;
+        align-items: center;
+        width: 20%;
+        margin: auto;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2%;
+    }
+
+    #header-intro {
+        font-size: 25px;
+        padding: 5%;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
     /* main styling */
+
     main {
         height: 53.5vh;
         margin-bottom: 10%;
         border-bottom: maroon solid 10px;
     }
+
+    /* Available crew list styling */
+
+    #clipboard-title {
+        font-size: 14px;
+    }
+
+    #available-crew-list {
+        font-size: 14px;
+    }
+
+    /* character card styling */
+
+    .character-image {
+        height: 8rem;
+    }
+
+    /* default button styling */
+
+    button {
+        font-size: 14px;
+    }
 }
 
 /* iPads (landscape) ----------- */
-@media only screen and (max-device-width : 1024px) and (min-device-width : 769px) and (orientation : landscape) {
+@media only screen and (max-device-width : 1024px) and (min-device-width : 768px) and (orientation : landscape) {
+    /* body styling */
+
     html,body {
         background-color: salmon;
         background-size: 100%;
@@ -42,6 +98,7 @@
     }
 
     /* header styling */
+
     header {
         height: 35vh;
     }
@@ -70,6 +127,7 @@
     }
 
     /* main styling */
+
     main {
         height: 53.5vh;
         margin-bottom: 10%;
@@ -77,6 +135,7 @@
     }
 
     /* Available crew list styling */
+
     #clipboard-title {
         font-size: 12px;
     }
@@ -86,31 +145,25 @@
     }
 
     /* character card styling */
+
     .character-image {
         height: 7rem;
     }
 
     /* default button styling */
+
     button {
         font-size: 12px;
-        height: fit-content;
     }
 }
 
 /* iPads (portrait) ----------- */
 @media only screen and (max-device-width : 1024px) and (min-device-width : 768px) and (orientation : portrait) {
+    /* body styling */
+
     html,body {
         width: 100vw;
         height: 100vh;
-    }
-
-    /* header styling */
-    header {
-        display: none;
-    }
-
-    #heading-container {
-        display: none;
     }
 
     #rotate-icon-container {
@@ -124,39 +177,136 @@
         height: 50%;
         margin: auto;
     }
+
+    /* header styling */
+
+    header {
+        display: none;
+    }
+
+    #heading-container {
+        display: none;
+    }
     
     #planet-express-logo {
         display: none;
     }
 
     /* main styling */
+
     main {
         display: none;
     }
 }
 
 /* Smartphones (landscape) ----------- */
-@media only screen and (max-device-width : 768px) {
+@media only screen and (max-device-width : 768px) and (orientation : landscape) {
+    /* pop-up window styling */
+
+    #pop-up-window {
+        height: 60%;
+        width: 60%;
+        margin: auto;
+    }
+
+    #farnsworth-message {
+        font-size: 16px;
+    }
+    /* header styling */
+
+    header {
+        height: 30vh;
+    }
+
+    #planet-express-logo {
+        display: flex;
+        align-items: center;
+        width: 15%;
+        margin: auto;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2%;
+    }
+
+    #header-intro {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+    /* main styling */
+
+    main {
+        height: 70vh;
+    }
+
     /* Available crew list styling */
+
     #clipboard-title {
         font-size: 12px;
     }
 
     #available-crew-list {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     /* character card styling */
+
     .character-image {
         height: 5rem;
     }
 
-    p {
+    /* default button styling */
+
+    button {
         font-size: 12px;
     }
 }
 
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 768px) {
-/* Styles */
+@media only screen and (max-device-width : 768px) and (orientation : portrait) {
+    /* body styling */
+
+    html,body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #rotate-icon-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+
+    #rotate-icon-container img {
+        height: 50%;
+        margin: auto;
+    }
+
+    /* header styling */
+
+    header {
+        display: none;
+    }
+
+    #heading-container {
+        display: none;
+    }
+    
+    #planet-express-logo {
+        display: none;
+    }
+
+    /* main styling */
+
+    main {
+        display: none;
+    }
 }
