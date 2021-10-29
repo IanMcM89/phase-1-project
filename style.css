@@ -4,6 +4,10 @@ html,body {
     margin: 0;
 }
 
+#rotate-icon-container {
+    display: none;
+}
+
 /* header styling */
 
 header {
