@@ -3,67 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchCustomCrew();
 
     document.querySelector('#crew-form').addEventListener('submit', checkFormInputs);
-    document.querySelector('#launch-btn').onclick = handleLaunchButton;
+    document.querySelector('#launch-btn').addEventListener('click', () => fetchPlanet([Math.ceil(Math.random() * 10)]));
 })
 
 //Stock characters to choose from on page load (can't be removed with DELETE request):
-const staticCrew = ['Leela', 'Fry', 'Bender', 'Amy', 'Zoidberg', 'Hermes', 'Scruffy'];
-
-const planets = {
-    1: {
-        name: 'the Moon',
-        client: 'Lunar Park executives',
-        cargo: 'boxes of Nova-Pop popcorn',
-        },
-    2: {
-        name: 'Mars',
-        client: 'Wongs',
-        cargo: 'bags of buggalo feed',
-        },
-    3: {
-        name: 'Eternium',
-        client: 'Nibblonians',
-        cargo: 'crates of live chickens',
-        },
-    4: {
-        name: 'the Globetrotter Homeworld',
-        client: 'Globetrotters',
-        cargo: 'tubes of cosmic basketballs',
-        },
-    5: {
-        name: 'Trisol',
-        client: 'Trilosians',
-        cargo: 'crates of crack-resistant glass bottles',
-        },
-    6: {
-        name: 'Neptune',
-        client: 'Neptunians',
-        cargo: 'food and medical relief supplies'
-        },
-    7: {
-        name: 'Amphibious 9',
-        client: 'Amphibiosans',
-        cargo: 'boxes of "colossal strength" bug spray'
-        },
-    8: {
-        name: 'Omicron Persei 8',
-        client: 'Omicronians',
-        cargo: '"Lrrr proof" satellite receivers',
-        },
-    9: {
-        name: 'Amazonia',
-        client: 'Amazonians',
-        cargo: 'barrels of long-burning torch oil',
-        },
-    10: {
-        name: 'Decapod 10',
-        client: 'Decapodians',
-        cargo: 'crates of genetically cloned sardines',
-        },
-}
-
-//Empty array that will hold name of crewmember for each character card created:
-let crewSelected = [];
+const staticCrew = ['Leela', 'Philip J. Fry', 'Bender', 'Amy', 'Zoidberg', 'Hermes', 'Scruffy'];
 
 //Fetch API data for static crew:
 const fetchStaticCrew = () => {
@@ -175,19 +119,21 @@ const createListItem = crewMember => {
 const handleListItemClick = (crewMember, li) => {
     let warningMessage = '"The Planet Express ship already has a full crew, you dingbat! Don\'t you have a delivery to make?...or do you? My memory isn\'t quite what it used to be..."'
 
-    if (crewSelected.length < 5) return createCharacterCard(crewMember, li);
+    let selectedCrew = [...document.querySelectorAll('#crewmember-name')].map(name => name.textContent);
+
+    if (selectedCrew.length < 5) return createCharacterCard(crewMember, li);
     createPopUpWindow(warningMessage);
 }
 
 //Creates a crew card for given crewmember
-const createCharacterCard = (crewMember, li) => {
+const createCharacterCard = (crewMember) => {
     const characterCard = document.querySelector('div.empty-card');
     characterCard.className = 'filled-card';
     characterCard.innerHTML = `
         <div class='header-div'>
             <button class="remove-btn">X</button>
         </div>
-        <h3>${crewMember.Name}</h3>
+        <h3 id='crewmember-name'>${crewMember.Name}</h3>
         <img src="${crewMember.PicUrl}" class='character-image' />
         <p>${crewMember.Species}</p>
         <div class='star-rating'>
@@ -226,8 +172,6 @@ const handleStarRating = characterCard => {
 //Adds given crewmember's name to selected crew array and makes the crewmember unable to be reselected:
 const selectCrewMember = (crewMember) => {
     [...document.querySelectorAll('li')].find(li => li.textContent === crewMember.Name).className = 'li-selected';
-
-    crewSelected.push(crewMember.Name);
 }
 
 const handleFireButton = (crewMember) => {
@@ -259,8 +203,6 @@ const createEmptyCard = () => {
 //Removes provided crewmember from selected crew array and changes crewmember li to deselected class:
 const deselectCrewMember = crewMember => {
     [...document.querySelectorAll('li')].filter(li => li.textContent === crewMember.Name).forEach(li => li.className = 'li-deselected');
-
-    crewSelected = crewSelected.filter(character => character !== crewMember.Name);
 }
 
 //Sends crewmember DELETE request to localhost3000 API:
@@ -274,19 +216,28 @@ const deleteCrewMember = (crewMember) => {
     .catch(err => console.error(err))
 }
 
-const handleLaunchButton = () => {
-    let warningMessage = `"The Planet Express ship needs ${5 - crewSelected.length} more crew before it can depart..."`;
-    
-    let crew = `${crewSelected.slice(0, 4).join(', ')} and ${crewSelected.slice(4)}`;
-    let planet = planets[Math.ceil(Math.random() * 10)];
+//Fetch API data for random planet:
+const fetchPlanet = (id) => {
+    fetch(`http://localhost:3000/planets/${id}`)
+    .then(resp => resp.json())
+    .then(json => handleLaunchButton(json))
+    .catch(err => console.error(err))
+}
 
-    crewSelected.length < 5 ? createPopUpWindow(warningMessage) : generateDeliveryMessage(crew, planet);
+const handleLaunchButton = (planet) => {
+    let selectedCrew = [...document.querySelectorAll('#crewmember-name')].map(name => name.textContent);
+
+    let warningMessage = `"The Planet Express ship needs ${5 - selectedCrew.length} more crew before it can depart..."`;
+
+    let crew = `${selectedCrew.slice(0, 4).join(', ')} and ${selectedCrew.slice(4)}`;
+
+    selectedCrew.length < 5 ? createPopUpWindow(warningMessage) : generateDeliveryMessage(crew, planet);
 }
 
 //Generates a success or failure message based on 50/50 outcome:
 const generateDeliveryMessage = (crew, planet) => {
-    let successMessage = `"Hoozah! ${crew} were able to successfully deliver the ${planet.cargo} to ${planet.name}. The ${planet.client} are quite pleased!"`;
-    let failureMessage = `"Oh bother! It appears that ${crew} failed to deliver the ${planet.cargo} to ${planet.name}. The ${planet.client} wont be happy about this..."`;
+    let successMessage = `"Hoozah! ${crew} were able to successfully deliver the ${planet.Cargo} to ${planet.Name}. The ${planet.Client} are quite pleased!"`;
+    let failureMessage = `"Oh bother! It appears that ${crew} failed to deliver the ${planet.Cargo} to ${planet.Name}. The ${planet.Client} wont be happy about this..."`;
 
     if (Math.random() >= 0.5) return createPopUpWindow(successMessage, 'images/farnsworth-happy.png');
     createPopUpWindow(failureMessage);

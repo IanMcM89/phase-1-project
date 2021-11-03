@@ -1,3 +1,65 @@
 {
-  "characters": []
+  "characters": [],
+  "planets": [
+    {
+      "id": 1,
+      "Name": "the Moon",
+      "Client": "Lunar Park executives",
+      "Cargo": "boxes of Nova-Pop popcorn"
+    },
+    {
+      "id": 2,
+      "Name": "Mars",
+      "Client": "Wongs",
+      "Cargo": "bags of buggalo feed"
+    },
+    {
+      "id": 3,
+      "Name": "Eternium",
+      "Client": "Nibblonians",
+      "Cargo": "crates of live chickens"
+    },
+    {
+      "id": 4,
+      "Name": "the Globetrotter Homeworld",
+      "Client": "Globetrotters",
+      "Cargo": "tubes of cosmic basketballs"
+    },
+    {
+      "id": 5,
+      "Name": "Trisol",
+      "Client": "Trilosians",
+      "Cargo": "crates of crack-resistant glass bottles"
+    },
+    {
+      "id": 6,
+      "Name": "Neptune",
+      "Client": "Neptunians",
+      "Cargo": "food and medical relief supplies"
+    },
+    {
+      "id": 7,
+      "Name": "Amphibious 9",
+      "Client": "Amphibiosans",
+      "Cargo": "boxes of 'colossal strength' bug spray"
+    },
+    {
+      "id": 8,
+      "Name": "Omicron Persei 8",
+      "Client": "Omicronians",
+      "Cargo": "'Lrrr proof' satellite receivers"
+    },
+    {
+      "id": 9,
+      "Name": "Amazonia",
+      "Client": "Amazonians",
+      "Cargo": "barrels of long-burning torch oil"
+    },
+    {
+      "id": 10,
+      "Name": "Decapod 10",
+      "Client": "Decapodians",
+      "Cargo": "crates of genetically cloned sardines"
+    }
+  ]
 }
