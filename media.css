@@ -1,8 +1,3 @@
-/* Desktops and laptops ----------- */
-@media only screen  and (max-width : 1224px) {
-    /* Styles */
-}
-
 /* iPad Pro (landscape) ----------- */
 @media only screen and (max-device-width : 1366px) and (min-device-width : 1024px) and (orientation : landscape) {
     /* body styling */

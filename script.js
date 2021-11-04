@@ -30,6 +30,7 @@ const fetchCustomCrew = () => {
     .catch(err => console.error(err))
 }
 
+//Displays professor farnsworth's message window:
 const createPopUpWindow = (message, imageURL = 'images/farnsworth-sad.png') => {
     const popUpWindow = document.querySelector('#pop-up-window-container');
 
@@ -134,14 +135,14 @@ const createCharacterCard = (crewMember) => {
             <button class="remove-btn">X</button>
         </div>
         <h3 id='crewmember-name'>${crewMember.Name}</h3>
-        <img src="${crewMember.PicUrl}" class='character-image' />
+        <img src="${crewMember.PicUrl}" class='character-image' alt='Image of ${crewMember.Name}'/>
         <p>${crewMember.Species}</p>
         <div class='star-rating'>
-            <img src='images/star.png' class='star'>
-            <img src='images/star.png' class='star'>
-            <img src='images/star.png' class='star'>
-            <img src='images/star.png' class='star'>
-            <img src='images/star.png' class='star'>
+            <img src='images/star.png' class='star' alt='Star Icon'>
+            <img src='images/star.png' class='star' alt='Star Icon'>
+            <img src='images/star.png' class='star' alt='Star Icon'>
+            <img src='images/star.png' class='star' alt='Star Icon'>
+            <img src='images/star.png' class='star' alt='Star Icon'>
         </div>
         <div class='footer-div'>
             <button class="fire-btn">Fire</button>
@@ -155,6 +156,7 @@ const createCharacterCard = (crewMember) => {
     selectCrewMember(crewMember);
 }
 
+//Star rating functionality character cards:
 const handleStarRating = characterCard => {
     let starsArray = [...characterCard.querySelectorAll('img.star')];
 
